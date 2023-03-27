@@ -3,19 +3,8 @@ import * as dotenv from "dotenv";
 
 
 dotenv.config();
-// Local database connection
-/*
-mongoose.connect('mongodb://localhost:27017/convin', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-}, () => {
-     console.log("DB Connected")
-}); 
-*/
-// `mongodb+srv://${process.env.ADMIN_USERNAME}:${process.env.ADMIN_PASSWORD}@cluster0.nalllch.mongodb.net/?retryWrites=true&w=majority`
-// Mongodb connection
 
-mongoose.connect(`mongodb+srv://Sneh:Sneh2002@cluster0.wchzvxa.mongodb.net/?retryWrites=true&w=majority`, {
+mongoose.connect(process.env.MONGO_URI, {
     useNewUrlParser: true,
     useCreateIndex: true,
     useUnifiedTopology: true,
