@@ -8,6 +8,7 @@ const addNewBucket = async (req, res) => {
     const { bucketName } = req.body;
 
     try {
+        
         const bucketList = await BucketList.findOne({ bucketName: bucketName })
         if (bucketList) {
             if (bucketList.bucketName === bucketName) {
